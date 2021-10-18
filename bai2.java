@@ -30,9 +30,9 @@ public class bai2 {
                 //} while ((choiceNumber < 1) || (choiceNumber > 4));
 
                 switch (choiceNumber) {
-                    case 1:
+                    
+                    case 1: 
                         // đảo ngược
-
                         String[] words = chuoi.split(" ");
                         System.out.print("Chuỗi đảo ngược là: ");
                         for (i = words.length - 1; i >= 0; i--) {
