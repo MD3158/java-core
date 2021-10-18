@@ -24,7 +24,6 @@ public class bai2 {
             System.out.println("3. In ra vị trí");
             System.out.println("4. Tách chuỗi theo vị trí");
 
-
             do {
                 System.out.println("Bấm số để chọn chức năng: ");
                 choiceNumber = sc.nextInt();
