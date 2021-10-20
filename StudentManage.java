@@ -67,7 +67,10 @@ public class StudentManage {
                             }
                         }
                     } while(test);
-                    break;
+                   for (int i=0;i<list1.size();i++) {
+                       list1.get(i).output();
+                   }
+                break;
 
                case 2:
 
@@ -135,32 +138,20 @@ public class StudentManage {
                         break;
                     case 4:
                         //Report
-                        ArrayList<Students> arrTemp = new ArrayList<>();
+                        int count1 = 1;
                         for (int i=0;i<list1.size()-1;i++) {
-                            for (int j=1;j<list1.size();j++) {
-                                String a1 = list1.get(i).getStudent_name();
-                                String a2 = list1.get(j).getStudent_name();
-                                String b1 = list1.get(i).getCourse_name();
-                                String b2 = list1.get(j).getCourse_name();
-                                if ((a1.equals(a2)) && (b1.equals(b2))) {
-                                    int c = 1;
-                                    c++;
-                                    list1.get(i).setCount1(c);
+                            for (int j=i+1;j<list1.size();j++) {
+                                if (list1.get(i).getStudent_name().compareTo(list1.get(j).getStudent_name())==0)
+                                {
+                                    if((list1.get(i).getCourse_name().equals((list1.get(j).getCourse_name()))))
+                                    {
+                                        list1.get(i).setCount1(list1.get(i).getCount1()+1);
+                                        list1.remove(j);
+                                    }
                                 }
                             }
                         }
-                        for (int i=0;i<list1.size()-1;i++) {
-                            for (int j=1;i<list1.size()-1;i++) {
-                                String a1 = list1.get(i).getStudent_name();
-                                String a2 = list1.get(j).getStudent_name();
-                                String b1 = list1.get(i).getCourse_name();
-                                String b2 = list1.get(j).getCourse_name();
-                                if ((a1.equals(a2)) && (b1.equals(b2))) {
-                                    list1.remove(i);
-                                }
-                            }
-                        }
-//                         ArrayList<Students> arrTemp = new ArrayList<>();
+//                      ArrayList<Students> arrTemp = new ArrayList<>();
 //                         for (int i = 0; i < list1.size(); i++) {
 //                            if ((!arrTemp.contains(list1.get(i).getStudent_name()))&&(!arrTemp.contains(list1.get(i).getCourse_name()))){
 //                               arrTemp.add(list1.get(i));
