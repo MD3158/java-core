@@ -14,7 +14,6 @@ public class StudentManage {
         String check, check1, check2 = " ";
         boolean test = true;
 
-
         for (; ;) {
             System.out.println("WELCOME TO STUDENT MANAGEMENT");
             System.out.println("1. Create");
@@ -22,8 +21,6 @@ public class StudentManage {
             System.out.println("3. Update/Delete");
             System.out.println("4. Report");
             System.out.println("5. Exit");
-
-
         do {
             System.out.println("Please choose 1 to Create, 2 to Find and Sort, 3 to Update/Delete, 4 to Report and 5 to Exit program");
             choiceNumber = Integer.parseInt(sc.nextLine());
@@ -51,7 +48,8 @@ public class StudentManage {
                     String course_name = sc.nextLine();
                     if (course_name.equalsIgnoreCase("java")
                            || course_name.equalsIgnoreCase("c/c++")
-                           || course_name.equalsIgnoreCase(".net")) {
+                           || course_name.equalsIgnoreCase(".net"))
+                    {
                        st.setCourse_name(course_name);
                     } else {
                         System.out.println("Please choose Java, C/C++,.NET");
@@ -67,13 +65,11 @@ public class StudentManage {
                             }
                         }
                     } while(test);
-                   for (int i=0;i<list1.size();i++) {
+                    for (int i=0;i<list1.size();i++) {
                        list1.get(i).output();
-                   }
-                break;
-
+                    }
+                    break;
                case 2:
-
                     System.out.println("Do you want to Find (F) or Short (S) student");
                     check2 = sc.nextLine();
                     if (check2.equalsIgnoreCase("S")) {
@@ -138,7 +134,6 @@ public class StudentManage {
                         break;
                     case 4:
                         //Report
-                        int count1 = 1;
                         for (int i=0;i<list1.size()-1;i++) {
                             for (int j=i+1;j<list1.size();j++) {
                                 if (list1.get(i).getStudent_name().compareTo(list1.get(j).getStudent_name())==0)
@@ -153,10 +148,8 @@ public class StudentManage {
                         }
 //                      ArrayList<Students> arrTemp = new ArrayList<>();
 //                         for (int i = 0; i < list1.size(); i++) {
-//                            if ((!arrTemp.contains(list1.get(i).getStudent_name()))&&(!arrTemp.contains(list1.get(i).getCourse_name()))){
 //                               arrTemp.add(list1.get(i));
 //                            }
-//                       }
 //                        list1.clear();
 //                        list1.addAll(arrTemp);
 
@@ -164,9 +157,7 @@ public class StudentManage {
                         {
                             System.out.print("Name: " + list1.get(i).getStudent_name() + " | Course Name: " + list1.get(i).getCourse_name() + " | " + list1.get(i).getCount1() + "\n");
                         }
-
-                    break;
-
+                        break;
                     default:
                         System.out.println("Please choose 1 to Create, 2 to Find and Sort, 3 to Update/Delete, 4 to Report and 5 to Exit program");
                         break;
