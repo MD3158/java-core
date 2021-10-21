@@ -134,28 +134,25 @@ public class StudentManage {
                         break;
                     case 4:
                         //Report
-                        for (int i=0;i<list1.size()-1;i++) {
-                            for (int j=i+1;j<list1.size();j++) {
-                                if (list1.get(i).getStudent_name().compareTo(list1.get(j).getStudent_name())==0)
+                        ArrayList<Students> arrTemp = new ArrayList<>();
+                        for (int i = 0; i < list1.size(); i++) {
+                               arrTemp.add(list1.get(i));
+                        }
+                        for (int i=0;i<arrTemp.size()-1;i++) {
+                            for (int j=i+1;j<arrTemp.size();j++) {
+                                if (arrTemp.get(i).getStudent_name().compareTo(arrTemp.get(j).getStudent_name())==0)
                                 {
-                                    if((list1.get(i).getCourse_name().equals((list1.get(j).getCourse_name()))))
+                                    if((arrTemp.get(i).getCourse_name().equalsIgnoreCase((arrTemp.get(j).getCourse_name()))))
                                     {
-                                        list1.get(i).setCount1(list1.get(i).getCount1()+1);
-                                        list1.remove(j);
+                                        arrTemp.get(i).setCount1(arrTemp.get(i).getCount1()+1);
+                                        arrTemp.remove(j);
                                     }
                                 }
                             }
                         }
-//                      ArrayList<Students> arrTemp = new ArrayList<>();
-//                         for (int i = 0; i < list1.size(); i++) {
-//                               arrTemp.add(list1.get(i));
-//                            }
-//                        list1.clear();
-//                        list1.addAll(arrTemp);
-
-                        for (int i = 0; i<list1.size(); i++)
+                        for (int i = 0; i<arrTemp.size(); i++)
                         {
-                            System.out.print("Name: " + list1.get(i).getStudent_name() + " | Course Name: " + list1.get(i).getCourse_name() + " | " + list1.get(i).getCount1() + "\n");
+                            System.out.print("Name: " + arrTemp.get(i).getStudent_name() + " | Course Name: " + arrTemp.get(i).getCourse_name() + " | " + arrTemp.get(i).getCount1() + "\n");
                         }
                         break;
                     default:
